@@ -20,9 +20,7 @@ export const Accordion = props => {
 
   function toggleAccordion() {
     setActiveState(setActive === "" ? "active" : "");
-    setHeightState(
-      setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
-    );
+
     setRotateState(
       setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
     );
@@ -60,11 +58,8 @@ export const Accordion = props => {
           </DropdownButton>
         </ButtonToolbar>
       </div>
-      <div
-        ref={content}
-        style={{ maxHeight: `${setHeight}` }}
-        className="accordion__content"
-      >
+
+      {setActive && (
         <div>
           {subClasses.map(el => {
             return (
@@ -98,28 +93,12 @@ export const Accordion = props => {
             );
           })}
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
 export const ClassSubClass = props => {
-  //const addMappingModal  = useSelector(state => state[ADD_MAPPING_MODAL]);
-
-  //const positionClassSubclass = addMappingModal.position1ClassSubclass
-
-  //const d = groupBy(positionClassSubclass,"driverClassId");
-
-  // const res = Object.keys(d).map(i => (
-  //     {
-  //         class: {
-  //             driverClassId: d[i][0].driverClassId,
-  //             driverClassName: d[i][0].driverClassName
-  //         },
-  //         subclasses: d[i]
-  //     }
-  // ));
-
   const res = [
     {
       class: { driverClassId: "1", driverClassName: "abc" },
@@ -151,13 +130,13 @@ export const ClassSubClass = props => {
           driverClassId: "2",
           driverClassName: "xyz",
           driverSubclassId: "3",
-          driverSubclassName: "test"
+          driverSubclassName: "testdddddd"
         },
         {
           driverClassId: "2",
           driverClassName: "abc",
           driverSubclassId: "5",
-          driverSubclassName: "test"
+          driverSubclassName: "testdddddddd"
         }
       ]
     }
@@ -165,7 +144,7 @@ export const ClassSubClass = props => {
 
   return (
     <Fragment>
-      <Button bsStyle="primary">hello button</Button>
+      <Button bsStyle="primary">hello</Button>
 
       <div className="subclass position-header">
         Position 1
