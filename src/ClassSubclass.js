@@ -165,7 +165,7 @@ export const ClassSubClass = props => {
 
   return (
     <Fragment>
-      <Button bsStyle="primary">hello</Button>
+      <Button bsStyle="primary">hello button</Button>
 
       <div className="subclass position-header">
         Position 1
