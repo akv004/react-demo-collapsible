@@ -1,2 +1,2 @@
-# react-demo-collapsible
+# react-demo-class-subclass
 Created with CodeSandbox
