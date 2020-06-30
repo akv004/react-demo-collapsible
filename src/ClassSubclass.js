@@ -46,7 +46,10 @@ export const Accordion = props => {
         <div>
           {subClasses.map(el => {
             return (
-              <div className="subclass accordion__title">
+              <div
+                key={`${el.driverSubclassName} - ${el.driverSubclassId}`}
+                className="subclass accordion__title"
+              >
                 {el.driverSubclassName} - {el.driverSubclassId}
                 <FontAwesomeIcon
                   className="vertical-ellipsis"
@@ -133,7 +136,12 @@ export const ClassSubClass = props => {
         />
       </div>
       {res.map(d => (
-        <Accordion class={d.class} subClasses={d.subclasses} content="" />
+        <Accordion
+          key={`${d.class}-${d.subclasses}`}
+          class={d.class}
+          subClasses={d.subclasses}
+          content=""
+        />
       ))}
     </Fragment>
   );
