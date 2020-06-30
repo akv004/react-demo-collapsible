@@ -7,7 +7,9 @@ export default function App() {
     <div className="App">
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
-      <ClassSubClass />
+      <div className="mybox">
+        <ClassSubClass />
+      </div>
     </div>
   );
 }

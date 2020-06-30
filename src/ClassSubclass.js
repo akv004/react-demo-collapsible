@@ -3,6 +3,8 @@ import "./class-subclass.scss";
 import AngleRight from "./AngleRight";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faEllipsisV from "@fortawesome/fontawesome-free-solid/faEllipsisV";
+import { Button } from "react-bootstrap";
+
 import DropdownButton from "react-bootstrap/lib/DropdownButton";
 import ButtonToolbar from "react-bootstrap/lib/ButtonToolbar";
 import MenuItem from "react-bootstrap/lib/MenuItem";
@@ -35,11 +37,28 @@ export const Accordion = props => {
             {props.class.driverClassName} - {props.class.driverClassId}
           </p>
         </button>
-        <FontAwesomeIcon
-          className="vertical-ellipsis"
-          icon={faEllipsisV}
-          color={"#777"}
-        />
+
+        <ButtonToolbar style={{ marginLeft: "auto" }}>
+          <DropdownButton
+            bsStyle="default"
+            style={{ border: "none", backgroundColor: "transparent" }}
+            title={
+              <span>
+                <FontAwesomeIcon
+                  className="vertical-ellipsis"
+                  icon={faEllipsisV}
+                  color={"#777"}
+                />
+              </span>
+            }
+            noCaret
+            id="dropdown-no-caret"
+          >
+            <MenuItem eventKey="1">Action</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey="2">Another action</MenuItem>
+          </DropdownButton>
+        </ButtonToolbar>
       </div>
       <div
         ref={content}
@@ -54,11 +73,27 @@ export const Accordion = props => {
                 className="subclass accordion__title"
               >
                 {el.driverSubclassName} - {el.driverSubclassId}
-                <FontAwesomeIcon
-                  className="vertical-ellipsis"
-                  icon={faEllipsisV}
-                  color={"#777"}
-                />
+                <ButtonToolbar style={{ marginLeft: "auto" }}>
+                  <DropdownButton
+                    bsStyle="default"
+                    style={{ border: "none", backgroundColor: "transparent" }}
+                    title={
+                      <span>
+                        <FontAwesomeIcon
+                          className="vertical-ellipsis"
+                          icon={faEllipsisV}
+                          color={"#777"}
+                        />
+                      </span>
+                    }
+                    noCaret
+                    id="dropdown-no-caret"
+                  >
+                    <MenuItem eventKey="1">Action</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey="2">Another action</MenuItem>
+                  </DropdownButton>
+                </ButtonToolbar>
               </div>
             );
           })}
@@ -130,6 +165,8 @@ export const ClassSubClass = props => {
 
   return (
     <Fragment>
+      <Button bsStyle="primary">hello</Button>
+
       <div className="subclass position-header">
         Position 1
         <ButtonToolbar style={{ marginLeft: "auto" }}>
